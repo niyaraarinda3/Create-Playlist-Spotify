@@ -1,0 +1,60 @@
+  body {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    background-color: rgb(209, 200, 200);
+    align-items: center;
+    font-family: sans-serif;
+    justify-content: center;
+  }
+   .cards {
+    border: 1px solid #5e5d58;
+    width: 250px;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #86847a;
+    border-radius: 8px;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  .kotak-img img {
+    width: 100%;
+  }
+    
+  .kotak-btn {
+    font-size: 20px;
+    background-color: #0b6e0b;
+    margin-bottom: 40px;
+    color: #ffffff;
+    padding: 10px 50px;
+    width: 150px;
+    height: 50px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+    
+  .kotak-btn:hover {
+    opacity: 0.8;
+    background-color: #15b115;
+  }
+  
+  .KontenLagu {
+    width: 100%;
+    padding-top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  .konten {
+    height: 200px;
+  }
+    

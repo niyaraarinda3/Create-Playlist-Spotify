@@ -1,0 +1,38 @@
+body {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    background-color: beige;
+    align-items: center;
+    font-family: sans-serif;
+  }
+  
+  .kotak {
+    margin: auto;
+    padding: 30px;
+    width: 300px;
+    background-color: #a8a829;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 1px 10px 26px 0px rgb(255, 255, 255);
+  }
+  
+  input {
+    padding: 10px 64px;
+    border: 3px solid rgba(92, 228, 28, 0.2);
+  }
+  
+  .form-group button {
+    font-family: "Arial";
+    border-radius: 5px;
+    color: rgb(255, 254, 254);
+    background: #0b6e0b;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: auto;
+  }
+
+  .form-group button:hover {
+    background-color: #15b115;
+  }
