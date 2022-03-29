@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <div>
       <KodeForm />
-      <KodeSong />
+
     </div>
   );
 }

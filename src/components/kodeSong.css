@@ -4,17 +4,17 @@
     display: flex;
     justify-content: center;
     height: 600px;
-    background-color: rgb(209, 200, 200);
+    background-color: rgb(252, 238, 196);
     align-items: center;
     font-family: sans-serif;
     justify-content: center;
   }
    .cards {
-    border: 1px solid #5e5d58;
+    border: 1px solid #b49b1b;
     width: 250px;
     padding: 30px 20px;
     text-align: center;
-    background-color: #86847a;
+    background-color: #e6d584;
     border-radius: 8px;
     float: left;
     margin-left: 10px;
@@ -55,6 +55,6 @@
   }
   
   .konten {
-    height: 200px;
+    height: 380px;
   }
     
