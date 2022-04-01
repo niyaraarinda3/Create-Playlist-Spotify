@@ -27,18 +27,43 @@
   }
     
   .kotak-btn {
-    font-size: 20px;
     background-color: #0b6e0b;
     margin-bottom: 40px;
     color: #ffffff;
     padding: 10px 50px;
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     padding: 10px 15px;
     font-size: 15px;
     font-family: sans-serif;
   }
+
+  .bot1 {
+    background-color: #0b6e0b;
+    color: #ffffff;
+    padding: 10px 50px;
+    width: 310px;
+    height: 30px;
+    padding: 10px 15px;
+    font-size: 10px;
+    font-family: 'Lucida Sans';
+    margin-top: 10px;
+  }
+  
+  .bot2 {
+    background-color: #be3c25;
+    color: #ffffff;
+    padding: 10px 50px;
+    width: 70px;
+    height: 30px;
+    padding: 10px 15px;
+    font-size: 10px;
+    font-family: 'Lucida Sans';
+    margin-left: 240px;
+
     
+  }
+
   .kotak-btn:hover {
     opacity: 0.8;
     background-color: #15b115;

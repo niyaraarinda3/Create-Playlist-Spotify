@@ -10,9 +10,11 @@ function App() {
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
   const SCOPE = "playlist-modify-private"
+ 
 
   const [token, setToken] = useState("")
   const [searchKey, setSearchKey] = useState("")
+  const [songSelected, setSongSelected] = useState([]);
   const [artists, setArtists] = useState([])
  
   useEffect(() => {
@@ -53,6 +55,14 @@ const searchArtists = async (e) => {
     setArtists(data.artists.items)
 }
 
+const handleSelected = (song) => {
+    if (!songSelected.includes(song)) {
+      setSongSelected([...songSelected, song]);
+    } else {
+      setSongSelected(songSelected.filter((elem) => elem !== song));
+    }
+  };
+
 const renderArtists = () => {
     return artists.map(artist => (
  
@@ -66,7 +76,24 @@ const renderArtists = () => {
 
     </div>
  <div>
-   <button className="kotak-btn">Select</button>
+ {!songSelected.includes(artist.id) ? (
+            <button
+              className="kotak-btn"
+              type="button"
+              onClick={() => handleSelected(artist.id)}
+            >
+              select
+            </button>
+          ) : (
+            <button
+              className="kotak-btn"
+              style={{ backgroundColor: "#FF0000" }}
+              type="button"
+              onClick={() => handleSelected(artist.id)}
+            >
+              deselect
+            </button>
+          )}
  </div>
  </div> 
     ))
@@ -77,11 +104,11 @@ return (
         <header className="App-header">     
         <div className="kotak">
         <div className="judul">
-            <h1>LOGIN</h1>
+            <h1>SPOTIFY</h1>
             {token ?
                 <form onSubmit={searchArtists}>
-                    <input type="text" onChange={e => setSearchKey(e.target.value)}/>
-                    <button type={"submit"}>Search</button> 
+                    <input  type="text" onChange={e => setSearchKey(e.target.value)}/>
+                    <button className="bot1" type={"submit"}>Search</button> 
                 </form>
 
                 : <p>Please login your accounts</p>
@@ -91,8 +118,8 @@ return (
                   <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Login
                       </a> 
                       ) : (
-                  <button onClick={logout}>Logout</button>)} 
-   </div>
+                  <button className="bot2" onClick={logout}>Logout</button>)} 
+     </div>
       </div>
             <div className="konten">
         <div className="KontenLagu">{renderArtists()}</div>
@@ -103,28 +130,3 @@ return (
 }
 
 export default App;
-
-
-// export default function KodeForm() {
-//     return (
-//         <div className="kotak">
-//         <div className="judul">
-//       <h1>Create Playlist</h1>
-//         </div>
-//         <div form>
-//             <div className="form-group">
-//               <label for="title">Title</label> <br></br>
-//               <input type="text" id="title" />
-//             </div>
-//             <div className="form-group">
-//               <label for="desc">Description</label>
-//               <input type="text" id="desc" /> 
-//             </div>
-//             <div className="form-group">
-//               <button className="submit">Create</button>
-//             </div>
-//         </div>
-//       </div>
-             
-//     );
-// }
