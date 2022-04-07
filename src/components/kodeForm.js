@@ -5,7 +5,7 @@ import "./kodeForm.css";
 export default function kodeForm({ track, selectedSong, songSelect }) {
   return (
     <div className="cards" key={track.id}>
-        <div div className="konten">
+        <div className="konten">
         <div className="kotak-img">
           {track.album.images.length ? (
             <img src={track.album.images[0].url} alt="" />
