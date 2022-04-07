@@ -42,14 +42,14 @@ export default function Home() {
       );
       window.location.hash = "";
 
-      window.localStorage.setItem("token", token);
+      // window.localStorage.setItem("token", token);
     }
-    setToken(token);
+    // setToken(token);
   }, []);
 
   const logout = () => {
     setToken("");
-    window.localStorage.removeItem("token");
+    // window.localStorage.removeItem("token")
   };
 
   const searchArtists = async (e) => {
