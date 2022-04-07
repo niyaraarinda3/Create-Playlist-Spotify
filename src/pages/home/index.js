@@ -42,14 +42,14 @@ export default function Home() {
       );
       window.location.hash = "";
 
-      // window.localStorage.setItem("token", token);
+      window.localStorage.setItem("token", token);
     }
-    // setToken(token);
+    setToken(token);
   }, []);
 
   const logout = () => {
     setToken("");
-    // window.localStorage.removeItem("token")
+    window.localStorage.removeItem("token");
   };
 
   const searchArtists = async (e) => {
@@ -100,7 +100,7 @@ export default function Home() {
 
     // Reset State
     setSongSelect([]);
-    setShow(false);
+    // setShow(false);
   };
 
   const handleChange = (e) => setKeyword(e.target.value);
@@ -130,25 +130,20 @@ export default function Home() {
             {!token ? (
               <a href={ConnectAccount()}>Login</a>
             ) : (
-              <div>
-                {" "}
-                <button className="bot2" onClick={logout}>
-                  Logout
-                </button>
-                <FormCreatePlaylist
-                  onSubmit={handleCreatePlaylist}
-                  show={show}
-                  onClose={() => setShow(false)}
-                />{" "}
-              </div>
+              <button className="bot2" onClick={logout}>
+                Logout
+              </button>
             )}
           </div>
         </div>
-        <div>
-          {songSelect.length > 0 ? (
+        {songSelect.length > 0 ? (
+          <div>
             <div className="preview-selected-tracks">{PreviewSong}</div>
-          ) : null}
-        </div>
+            <div style={{ clear: "both" }} />
+            <FormCreatePlaylist onSubmit={handleCreatePlaylist} show={show} />
+          </div>
+        ) : null}
+
         <div className="konten">
           <KodeSong
             tracks={tracks}
