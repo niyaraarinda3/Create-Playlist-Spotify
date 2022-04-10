@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import ConnectAccount from "../../Auth/Auth";
 import KodeSong from "../../components/kodeSong";
 import PickSong from "../../components/showPrev";
 import FormCreatePlaylist from "../../components/createPlaylist";
 import { getUserInfo, createPlaylist } from "../../Auth/api";
+//import ConnectAccount from "../../Auth/Auth";
+import TokenContext from "../../context/TokenContext";
+import LoginPage from "../login";
 
 export default function Home() {
-  const [token, setToken] = useState("");
+  const { token, setToken } = useContext(TokenContext);
+  // const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
   const [tracks, setTracks] = useState([]);
   const [songSelect, setSongSelect] = useState([]);
@@ -28,28 +31,30 @@ export default function Home() {
     searchArtists(keyword, token).then((data) => setTracks(data));
   };
 
-  useEffect(() => {
-    const hash = window.location.hash;
-    // let tkn = window.localStorage.getItem("token");
+  // useEffect(() => {
+  //   const hash = window.location.hash;
+  //   // let token = window.localStorage.getItem("token");
+  //   let token = localStorage.getItem("token");
 
-    if (!token && hash) {
-      setToken(
-        hash
-          .substring(1)
-          .split("&")
-          .find((elem) => elem.startsWith("access_token"))
-          .split("=")[1]
-      );
-      window.location.hash = "";
+  //   if (!token && hash) {
+  //     token = hash
+  //       .substring(1)
+  //       .split("&")
+  //       .find((elem) => elem.startsWith("access_token"))
+  //       .split("=")[1];
 
-      // window.localStorage.setItem("token", token);
-    }
-    // setToken(token);
-  }, []);
+  //     window.location.hash = "";
+
+  //     // window.localStorage.setItem("token", token);
+  //     localStorage.setItem("token", token);
+  //   }
+  //   setToken(token);
+  // }, []);
 
   const logout = () => {
     setToken("");
-    // window.localStorage.removeItem("token")
+    //window.localStorage.removeItem("token");
+    localStorage.removeItem("token");
   };
 
   const searchArtists = async (e) => {
@@ -128,9 +133,9 @@ export default function Home() {
             )}
             <br></br>
             {!token ? (
-              <a href={ConnectAccount()}>Login</a>
+              <LoginPage />
             ) : (
-              <button className="bot2" onClick={logout}>
+              <button onClick={logout} className="bot2">
                 Logout
               </button>
             )}

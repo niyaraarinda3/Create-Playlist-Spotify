@@ -1,0 +1,11 @@
+.btn {
+  background-color: #7b8128;
+  margin-bottom: 70px;
+  color: #fdfff4;
+  width: 70px;
+  height: 50px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium";
+  justify-content: center;
+}
