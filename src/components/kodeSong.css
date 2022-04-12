@@ -1,3 +1,4 @@
+/*Penggunaan Flexbox*/
 body {
   margin: 10px;
   padding: 10px;
@@ -12,30 +13,33 @@ body {
 .cards {
   border: 1px solid #b49b1b;
   width: 150px;
-  height: 250px;
+  height: 230px;
   padding: 30px 20px;
-  text-align: center;
   background-color: #e6d584;
   border-radius: 8px;
   float: left;
   margin-left: 10px;
   margin-bottom: 10px;
-  margin-top: 30px;
-  justify-content: center;
+  margin-top: 10px;
   font-size: 10px;
 }
+/*Penggunaan Grid*/
 .cardss {
+  display: grid;
+  grid: 80px / 80px 40px 10px;
+  grid-gap: 10px;
+  padding: 24px 10px;
+  grid-template-columns: 100% auto;
   border: 1px solid #ffff00;
-  width: 100px;
-  height: 175px;
-  padding: 30px 20px;
+  width: 6%;
+  height: 195px;
   text-align: center;
   background-color: #bc8e1c;
-  border-radius: 8px;
+  border-radius: 4px;
   float: left;
   margin-bottom: 10px;
-  margin-top: 20px;
-  margin-left: 10px;
+  margin-top: 3px;
+  margin-left: 5px;
   justify-content: center;
   font-size: 8px;
 }
@@ -107,6 +111,7 @@ body {
   background-color: #15b115;
 }
 
+/*Penggunaan Flexbox*/
 .konten {
   height: 178px;
   width: 100%;
@@ -117,7 +122,7 @@ body {
   text-align: center;
   justify-content: center;
 }
-
+/*Penggunaan Flexbox*/
 .konten1 {
   height: 200px;
   width: 100%;

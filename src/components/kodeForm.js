@@ -15,7 +15,11 @@ export default function kodeForm({ track, selectedSong, songSelect }) {
         </div>
 
         <div className="kotak-main">
-          <h3>{track.name}</h3>
+          <h3>
+            {track.name.length > 30
+              ? `${track.name.substring(0, 30)}..`
+              : track.name}
+          </h3>
         </div>
       </div>
       <br></br>

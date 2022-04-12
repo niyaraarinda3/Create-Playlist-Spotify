@@ -3,10 +3,12 @@ import axios from "axios";
 import KodeSong from "../../components/kodeSong";
 import PickSong from "../../components/showPrev";
 import FormCreatePlaylist from "../../components/createPlaylist";
-import { getUserInfo, createPlaylist } from "../../Auth/api";
+import { getUserInfo, createPlaylist, getTracks } from "../../Auth/api";
 //import ConnectAccount from "../../Auth/Auth";
 import TokenContext from "../../context/TokenContext";
 import LoginPage from "../login";
+
+import "./index.css";
 
 export default function Home() {
   const { token, setToken } = useContext(TokenContext);
@@ -64,6 +66,7 @@ export default function Home() {
         Authorization: `Bearer ${token}`,
       },
       params: {
+        limit: 12,
         q: searchKey,
         type: "track",
       },
@@ -132,15 +135,16 @@ export default function Home() {
               <p>Please login your accounts</p>
             )}
             <br></br>
-            {!token ? (
-              <LoginPage />
-            ) : (
-              <button onClick={logout} className="bot2">
-                Logout
-              </button>
-            )}
           </div>
+          {!token ? (
+            <LoginPage />
+          ) : (
+            <button onClick={logout} className="bot2">
+              Logout
+            </button>
+          )}
         </div>
+
         {songSelect.length > 0 ? (
           <div>
             <div className="preview-selected-tracks">{PreviewSong}</div>

@@ -1,15 +1,19 @@
+/*Penggunaan Grid*/
 .Card {
   background-color: rgb(65, 243, 121);
   border: 1px solid #0f810d;
   width: fit-content;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 1em;
+  border-radius: 5px;
   justify-content: center;
   height: 150px;
-  margin-top: 30px;
+  margin-top: auto;
+  display: grid;
+  font-size: 13px;
 }
-
+/*Penggunaan Flexbox*/
 .form-group {
+  font-size: 15px;
   display: flex;
   font-family: "Arial";
 }

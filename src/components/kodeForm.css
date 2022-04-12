@@ -1,3 +1,4 @@
+/*Penggunaan Flexbox*/
 body {
   margin: 10px;
   padding: 10px;
@@ -10,14 +11,29 @@ body {
 }
 
 .kotak {
+  display: flow-roots;
+  padding: 10px;
   margin: auto;
   padding: 30px;
-  width: 300px;
-  height: 170px;
-  margin-top: 300px;
+  width: 290px;
+  height: 150px;
+  margin-top: 450px;
   background-color: #a8a829;
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 1px 10px 26px 0px rgb(255, 255, 255);
+  font-size: 10px;
+}
+
+/*Penggunaan Flexbox*/
+.container {
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(9);
+  margin: 5px 15px;
+  gap: 10px;
+  position: fixed;
 }
 
 input,
