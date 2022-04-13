@@ -1,6 +1,7 @@
 import React from "react";
 import "./kodeSong.css";
 import "./kodeForm.css";
+import Button from "@mui/material/Button";
 
 export default function kodeForm({ track, selectedSong, songSelect }) {
   return (
@@ -25,12 +26,15 @@ export default function kodeForm({ track, selectedSong, songSelect }) {
       <br></br>
       <br></br>
       <br></br>
-      <button
-        className={songSelect ? "kotak-btn1" : "kotak-btn"}
+      <Button
+        variant="contained"
+        color="success"
+        size="small"
+        className={songSelect ? "" : ""}
         onClick={() => selectedSong(track)}
       >
         {!songSelect ? "Select" : "Deselect"}
-      </button>
+      </Button>
     </div>
   );
 }

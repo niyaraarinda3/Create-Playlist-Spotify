@@ -7,7 +7,8 @@ import { getUserInfo, createPlaylist, getTracks } from "../../Auth/api";
 //import ConnectAccount from "../../Auth/Auth";
 import TokenContext from "../../context/TokenContext";
 import LoginPage from "../login";
-
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import "./index.css";
 
 export default function Home() {
@@ -122,13 +123,24 @@ export default function Home() {
             {token ? (
               <div>
                 <form onSubmit={searchArtists}>
-                  <input
+                  <TextField
+                    variant="outlined"
+                    required
+                    size="small"
+                    placeholder="search song"
                     type="text"
+                    fullWidth="100"
                     onChange={(e) => setSearchKey(e.target.value)}
                   />
-                  <button className="bot1" type={"submit"}>
+                  <Button
+                    variant="contained"
+                    color="success"
+                    size="small"
+                    type={"submit"}
+                    fullWidth="100"
+                  >
                     Search
-                  </button>
+                  </Button>
                 </form>
               </div>
             ) : (
@@ -139,9 +151,14 @@ export default function Home() {
           {!token ? (
             <LoginPage />
           ) : (
-            <button onClick={logout} className="bot2">
+            <Button
+              onClick={logout}
+              variant="contained"
+              color="error"
+              size="small"
+            >
               Logout
-            </button>
+            </Button>
           )}
         </div>
 
