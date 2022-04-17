@@ -9,7 +9,7 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { getToken } from "./Auth/api";
+import { getToken } from "./Auth/auth";
 import LoginPage from "./pages/login";
 
 const App = () => {

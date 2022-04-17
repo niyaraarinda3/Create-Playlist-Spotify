@@ -3,7 +3,8 @@ import axios from "axios";
 import KodeSong from "../../components/kodeSong";
 import PickSong from "../../components/showPrev";
 import FormCreatePlaylist from "../../components/createPlaylist";
-import { getUserInfo, createPlaylist, getTracks } from "../../Auth/api";
+import { getUserInfo } from "../../Auth/auth";
+import { createPlaylist } from "../../Auth/api";
 //import ConnectAccount from "../../Auth/Auth";
 import TokenContext from "../../context/TokenContext";
 import LoginPage from "../login";
@@ -29,30 +30,10 @@ export default function Home() {
     }
   }, []);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    searchArtists(keyword, token).then((data) => setTracks(data));
-  };
-
-  // useEffect(() => {
-  //   const hash = window.location.hash;
-  //   // let token = window.localStorage.getItem("token");
-  //   let token = localStorage.getItem("token");
-
-  //   if (!token && hash) {
-  //     token = hash
-  //       .substring(1)
-  //       .split("&")
-  //       .find((elem) => elem.startsWith("access_token"))
-  //       .split("=")[1];
-
-  //     window.location.hash = "";
-
-  //     // window.localStorage.setItem("token", token);
-  //     localStorage.setItem("token", token);
-  //   }
-  //   setToken(token);
-  // }, []);
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+  //   searchArtists(keyword, token).then((data) => setTracks(data));
+  // };
 
   const logout = () => {
     setToken("");
@@ -112,7 +93,7 @@ export default function Home() {
     // setShow(false);
   };
 
-  const handleChange = (e) => setKeyword(e.target.value);
+  // const handleChange = (e) => setKeyword(e.target.value);
 
   return (
     <div className="App">
@@ -129,7 +110,7 @@ export default function Home() {
                     size="small"
                     placeholder="search song"
                     type="text"
-                    fullWidth="100"
+                    //fullWidth="100"
                     onChange={(e) => setSearchKey(e.target.value)}
                   />
                   <Button
@@ -137,7 +118,7 @@ export default function Home() {
                     color="success"
                     size="small"
                     type={"submit"}
-                    fullWidth="100"
+                    //fullWidth="100"
                   >
                     Search
                   </Button>

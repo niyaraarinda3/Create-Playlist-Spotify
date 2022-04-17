@@ -1,5 +1,5 @@
 // Authorization
-import { ConnectAccount } from "../../Auth/api";
+import { ConnectAccount } from "../../Auth/auth";
 
 // Components
 import Login from "../../components/login";
