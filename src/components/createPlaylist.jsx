@@ -9,11 +9,11 @@ const FormCreatePlaylist = ({ onSubmit }) => {
         <form className="form" onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" minlength="10" required />
+            <input type="text" id="title" required minLength="10" />
           </div>
           <div className="form-group">
             <label htmlFor="desc">Description</label>
-            <textarea id="desc" minlength="20" required></textarea>
+            <textarea id="desc" required minLength="20"></textarea>
           </div>
           <div className="form-group">
             <button id="submit">Create</button>

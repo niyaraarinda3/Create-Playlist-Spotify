@@ -1,7 +1,4 @@
-import Home from "./pages/home/index";
-//import React, { useMemo, useState } from "react";
-import React, { useEffect, useMemo, useState } from "react";
-import TokenContext from "./context/TokenContext";
+import { useEffect, useMemo, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -9,12 +6,19 @@ import {
   Redirect,
 } from "react-router-dom";
 
+// Auth
 import { getToken } from "./Auth/auth";
-import LoginPage from "./pages/login";
+
+// Pages
+import Home from "./pages/home/index";
+import LoginPage from "./pages/login/index";
+
+// Token Context
+import TokenContext from "./context/TokenContext";
+//import { createContext, Dispatch, SetStateAction, useState } from "react";
 
 const App = () => {
   const [token, setToken] = useState("");
-
   const value = useMemo(() => ({ token, setToken }), [token]);
 
   useEffect(() => {

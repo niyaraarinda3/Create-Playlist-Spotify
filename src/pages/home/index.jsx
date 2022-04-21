@@ -20,7 +20,7 @@ export default function Home() {
   const [songSelect, setSongSelect] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [show, setShow] = useState(false);
-  const [keyword, setKeyword] = useState("");
+  // const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
     if (token) {

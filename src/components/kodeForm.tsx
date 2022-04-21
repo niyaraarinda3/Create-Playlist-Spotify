@@ -2,6 +2,7 @@ import React from "react";
 import "./kodeSong.css";
 import "./kodeForm.css";
 import Button from "@mui/material/Button";
+import { convertDuration } from "../functions/functions";
 
 export default function kodeForm({ track, selectedSong, songSelect }) {
   return (
@@ -9,7 +10,7 @@ export default function kodeForm({ track, selectedSong, songSelect }) {
       <div className="konten">
         <div className="kotak-img">
           {track.album.images.length ? (
-            <img src={track.album.images[0].url} alt="" />
+            <img src={track.album.images[0].url} alt="AlbumCover" />
           ) : (
             <div>No Image </div>
           )}
@@ -23,9 +24,11 @@ export default function kodeForm({ track, selectedSong, songSelect }) {
           </h3>
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
+      <div className="kotak-main">
+        <p>{track.artists.map((artist) => artist.name).join(", ")}</p>
+      </div>
+      <p>{convertDuration(track.duration_ms)}</p>
+
       <Button
         variant="contained"
         color="success"
