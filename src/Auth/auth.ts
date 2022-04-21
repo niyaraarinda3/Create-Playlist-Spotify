@@ -1,7 +1,7 @@
 export const ConnectAccount = () => {
   const config = {
     CLIENT_ID: "8ac9be97ab0a4fb8b02c48ceede77c6f",
-    REDIRECT_URI: "http://localhost:3000",
+    REDIRECT_URI: process.env.REACT_APP_BASE_URL,
     AUTH_ENDPOINT: "https://accounts.spotify.com/authorize",
     RESPONSE_TYPE: "token",
     SCOPE: "playlist-modify-private",
