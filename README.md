@@ -24,7 +24,7 @@ SaGigih application is an application that works for those of you who want to ea
 How to Clone the project using git and install the dependencies using npm?
 
 ```bash
-git clone https://github.com/niyaraarinda3/Homework_all
+git clone https://github.com/niyaraarinda3/Homework_all.git
 
 cd homework
 
