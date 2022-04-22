@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { Provider } from "react-redux";
-import store from "../../store/store";
+import "@testing-library/jest-dom";
 import KodeForm from "./kodeForm";
 
 const data = {
@@ -83,29 +81,20 @@ const data = {
 
 beforeEach(() => {
   // eslint-disable-next-line
-  render(
-    <Provider store={store}>
-      <KodeForm track={data} onSelectTrack={() => {}} isSelected={true} />
-    </Provider>
-  );
+  render(<KodeForm track={data} onSelectTrack={() => {}} isSelected={true} />);
 });
 
 test("cek image album", () => {
-  const imgElement = screen.findByTestId(/AlbumCover/i);
-  expect(imgElement).toBeInTheDocument;
+  const imgElement = screen.getByAltText(/AlbumCover/i);
+  expect(imgElement).toBeInTheDocument();
 });
 
 test("cek title", () => {
-  const trackTitleElement = screen.findByTestId(data.name);
-  expect(trackTitleElement).toBeInTheDocument;
+  const trackTitleElement = screen.getByText(data.name);
+  expect(trackTitleElement).toBeInTheDocument();
 });
 
 test("cek nama artis", () => {
-  const artistNameElement = screen.findByTestId(data.artists[0].name);
-  expect(artistNameElement).toBeInTheDocument;
-});
-
-test("cek nama album", () => {
-  const albumNameElement = screen.findByTestId(data.album.name);
-  expect(albumNameElement).toBeInTheDocument;
+  const artistNameElement = screen.getByText(data.artists[0].name);
+  expect(artistNameElement).toBeInTheDocument();
 });

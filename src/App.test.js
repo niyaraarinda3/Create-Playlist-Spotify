@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "../store/store";
 import App from "./App";
 
-test("check the login page", () => {
+test("cek login page", () => {
   render(
     <Provider store={store}>
       <App />

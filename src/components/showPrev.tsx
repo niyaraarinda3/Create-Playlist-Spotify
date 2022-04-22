@@ -1,13 +1,11 @@
 import * as React from "react";
 import "./kodeSong";
 import Card from "@mui/material/Card";
-//import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 export default function PickSong({ coverAlbum, titleSong, nameArtist }) {
   return (
-    //<div className="cardss">
     <Card
       sx={{
         maxWidth: 100,

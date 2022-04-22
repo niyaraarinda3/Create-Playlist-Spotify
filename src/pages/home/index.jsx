@@ -5,7 +5,6 @@ import PickSong from "../../components/showPrev";
 import FormCreatePlaylist from "../../components/createPlaylist";
 import { getUserInfo } from "../../Auth/auth";
 import { createPlaylist } from "../../Auth/api";
-//import ConnectAccount from "../../Auth/Auth";
 import TokenContext from "../../context/TokenContext";
 import LoginPage from "../login";
 import TextField from "@mui/material/TextField";
@@ -14,13 +13,11 @@ import "./index.css";
 
 export default function Home() {
   const { token, setToken } = useContext(TokenContext);
-  // const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
   const [tracks, setTracks] = useState([]);
   const [songSelect, setSongSelect] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [show, setShow] = useState(false);
-  // const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
     if (token) {
@@ -30,14 +27,8 @@ export default function Home() {
     }
   }, []);
 
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   searchArtists(keyword, token).then((data) => setTracks(data));
-  // };
-
   const logout = () => {
     setToken("");
-    //window.localStorage.removeItem("token");
     localStorage.removeItem("token");
   };
 
@@ -74,26 +65,19 @@ export default function Home() {
     />
   ));
 
-  // Handle create playlist
   const handleCreatePlaylist = (e) => {
     e.preventDefault();
 
-    // Retrieve the user's input
     const playlistData = {
       name: e.target.title.value,
       description: e.target.desc.value,
     };
 
-    // Create playlist and add the selected tracks
     const tracksToAdd = songSelect.map((track) => track.uri);
     createPlaylist(userInfo.id, playlistData, tracksToAdd, token);
 
-    // Reset State
     setSongSelect([]);
-    // setShow(false);
   };
-
-  // const handleChange = (e) => setKeyword(e.target.value);
 
   return (
     <div className="App">
@@ -110,7 +94,6 @@ export default function Home() {
                     size="small"
                     placeholder="search song"
                     type="text"
-                    //fullWidth="100"
                     onChange={(e) => setSearchKey(e.target.value)}
                   />
                   <Button
@@ -118,7 +101,6 @@ export default function Home() {
                     color="success"
                     size="small"
                     type={"submit"}
-                    //fullWidth="100"
                   >
                     Search
                   </Button>
